@@ -1,0 +1,11 @@
+.titulo {
+    color: #E6223A;
+    font-size: 60px;
+    font-family: Arial, sans-serif;
+    font-weight: bold;
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 5px;
+    
+    text-shadow: 3px 3px 0px #03213D;
+}
