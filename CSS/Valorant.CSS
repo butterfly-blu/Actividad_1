@@ -8,10 +8,11 @@ html, body {
 }
 
 body {
-  font-family: system-ui, Arial, sans-serif;
+  font-family:"VT323", monospace; 
+  font-size: 20px;
   color: #222;
   line-height: 1.6;
-  background: #f4f4f4;
+  background: #eff0f2;
 }
 
 h1, h2, h3 { margin-bottom: 0.6em; line-height: 1.3; }
@@ -32,18 +33,52 @@ nav {
 }
 
 nav a {
+  position: relative;
   color: #fff;
   text-decoration: none;
   padding: 0.5rem 1rem;
   border-radius: 6px;
-  /* TRANSICIÓN: color de fondo y elevación al pasar el mouse */
-  transition: background-color 0.3s ease, transform 0.3s ease;
+  overflow: hidden;
+  z-index: 1;
+  transition: transform 0.3s ease;
 }
 
-nav a:hover,
-nav a:focus {
-  background-color: #690722;
-  transform: translateY(-3px);
+/* pseudo-elemento ::before -- permite tener 
+la imagen de fondo completa y hacerla aparecer con transición suave */
+nav a::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+  opacity: 0;
+  z-index: -1;
+  transition: opacity 0.3s ease;
+}
+
+nav a:hover::before {
+  opacity: 1;
+}
+
+/* Cada link con su imagen específica */
+nav a[href="#introduccion"]::before {
+  background-color: #690722; 
+  background-image: none; /* asegura que no tenga imagen */
+}
+
+nav a[href="#desarrollo"]::before {
+  background-image: url("../imagenes/Roblox.jpg");
+}
+
+nav a[href="#galeria"]::before {
+  background-image: url("../imagenes/V_Menu.jpg");
+}
+
+nav a[href="#conclusion"]::before {
+  background-image: url("../imagenes/M_Menu.jpg");
 }
 
 /* ============================================
@@ -66,7 +101,6 @@ nav a:focus {
   background: #4f5f8c;
   padding: 3rem 1.5rem;
   text-align: center;
-  font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
   color: black;
 }
 
@@ -80,7 +114,7 @@ nav a:focus {
 
 .pie {
   grid-area: pie;
-  background: #1e1e2f;
+  background: #4f5f8c;
   color: #ccc;
   text-align: center;
   padding: 1.5rem;
