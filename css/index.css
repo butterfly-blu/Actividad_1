@@ -1,0 +1,85 @@
+h1{
+color: #f2c48d;
+    text-align:center;
+    
+}
+
+p{
+    color:  #f2c48d;
+    text-align-last:left;
+}
+
+body{
+   
+  background-image: url('../html/img/index/videojuegos.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
+.logo{
+    color: #ffffff;
+
+}
+
+.navbar{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #729468;
+  padding: 15px 30px;
+}
+
+
+.nav-links{
+  display: flex;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  gap: 25px;
+}
+
+.nav-links a{
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+  transition: color 0.2s;
+}
+
+.nav-links a:hover{
+  color: rgb(75, 16, 147);
+}
+
+main{
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.game-card{
+  background-color: #1e1e1e;
+  color: white;
+  border-radius: 12px;
+  padding: 25px;
+  margin-bottom: 30px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+}
+
+.game-card h2{
+  color: #85b45d;
+  border-bottom: 2px solid rgb(75, 143, 65);
+  padding-bottom: 8px;
+}
+
+.game-card img{
+  border-radius: 8px;
+  display: block;
+  margin: 15px 0;
+}
+
+footer{
+  text-align: center;
+  padding: 20px;
+  background-color: #035300a7;
+  color: white;
+}
