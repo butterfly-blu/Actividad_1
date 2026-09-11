@@ -1,46 +1,116 @@
 <!DOCTYPE html>
-<html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title ">Valorant</title>
-    <link rel="stylesheet" href="CSS/Valorant.CSS">
-</head>
+<html>
+<head><meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <link rel="stylesheet" href="CSS/Valorant.CSS"/>
+ <link rel="icon" type="image/png" href="imagenes/Logo_V.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=VT323&display=swap" rel="stylesheet">
+<title>Valorant</title>
 
+</head>
 <body>
 
-    <!-- ENCABEZADO -->
-    <header>
-        <h1 class="titulo">VALORANT</h1>
-        <p>Descubre el mundo de Valorant</p>
-    </header>
+<!-- NAV SUPERIOR -->
+<nav>
+  <a href="html/index.html">Página Principal</a>
+  <a href="html/roblox.html">Roblox</a>
+  <a href="Valorant.html">Valorant</a>
+  <a href="Minecraft.html">Minecraft</a>
+</nav>
 
-    <!-- MENÚ -->
-    <nav>
-        <a href="index.html">Inicio</a>
-        <a href="roblox.html">Roblox</a>
-        <a href="minecraft.html">Minecraft</a>
-        <a href="valorant.html">Valorant</a>
-    </nav>
+<!-- GRID DE PÁGINA COMPLETA -->
+<div class="pagina-grid">
 
-    <!-- CONTENIDO PRINCIPAL -->
-    <main>
+  <header class="encabezado">
+    <h1>VALORANT</h1>
+    <p>Videojuego de disparos táctico en primera persona.</p>
+  </header>
 
-        <section>
-            <h2>¿Qué es Valorant?</h2>
-            <p>
-                Valorant es un videojuego de disparos táctico desarrollado
-                por Riot Games.
-            </p>
-        </section>
+  <main class="contenido">
 
-    </main>
+    <!-- ---- Introducción: texto + imagen con Flexbox ---- -->
+    <section id="introduccion" class="bloque-flex">
+      <div class="texto">
+        <h2>¿Qué es?</h2>
+        <p>Es un juego de disparos táctico 5v5 con agentes que poseen habilidades únicas,desarrollado y publicado por Riot Gamnes. </p>
+      </div>
+      <figure class="imagen-caja">
+        <img src="imagenes/valo1.jpg" alt="Descripción de la imagen 1">
+        <figcaption>Tomado de: Riot Games (2023).</figcaption>
+        <!-- <figcaption>Pie de foto o fuente de la imagen.</figcaption> -->
+      </figure>
+    </section>
 
-    <!-- PIE DE PÁGINA -->
-    <footer>
-        <p>© 2026 - Página sobre videojuegos</p>
-        <p>Proyecto de HTML y CSS</p>
-    </footer>
+    <!-- ---- Desarrollo: bloques de texto en Grid ---- -->
+    <section id="desarrollo" class="bloque-grid">
+      <h2>¿Cómo funciona?</h2>
+      <div class="grid-contenido">
+        <article class="card">
+          <h3>Estructura</h3>
+          <p>Se enfrentan dos equipos de cinco jugadores: los Atacantes y los Defensores.</p>
+        </article>
+        <article class="card">
+          <h3>Objetivo principal</h3>
+          <p>Los atacantes deben llevar y plantar un dispositivo llamado Spike 
+            en zonas específicas del mapa, o eliminar a todos los defensores. 
+            Los defensores deben evitar que la planten, desactivarla si ya la pusieron, o eliminar a los atacantes.</p>
+        </article>
+        </div>
+
+        <h3 class="subtitulo">Los Agentes y sus Roles</h3>
+        <p>Antes de empezar, cada jugador elige un personaje llamado agente. Cada uno cuenta con un diseño único, una historia y poderes propios divididos en cuatro roles esenciales:
+            Duelistas, Iniciadores, Controladores y Centinelas.
+          </p>
+        </article>
+        <article class="card-h">
+          <h3>Definición Rol</h3>
+          <p>Duelistas: Atacantes principales y agresivos encargados de conseguir las primeras bajas para abrir camino. <br>
+            Iniciadores: Facilitan información y ciegan o aturden enemigos para ayudar a su equipo a entrar en zonas disputadas. <br>
+            Controladores: Utilizan pantallas de humo u otras herramientas para bloquear la visión del enemigo y dominar el territorio. <br>
+            Centinelas: Expertos en defensa que cuidan la retaguardia, bloquean rutas y protegen las zonas plantadas.
+        </p>
+    </section>
+
+    <section id="rangos" class="bloque-flex">
+  <div class="texto">
+    <h2>Rangos y Cuáles son</h2>
+    <p>El sistema de rangos permite medir el nivel de habilidad de los
+    jugadores. Van desde Hierro, pasando por Bronce, Plata, Oro, Platino,
+    Diamante, Ascendente e Inmortal, hasta llegar a Radiante, el rango más
+    alto del juego.</p>
+  </div>
+  <figure class="imagen-caja">
+    <img src="imagenes/rangos.jpg" alt="Escudos de los rangos del juego">
+    <figcaption>Tomado de: Riot Games (2023).</figcaption>
+  </figure>
+</section>
+
+    <!-- ---- Galería: imágenes con Grid ---- -->
+    <section id="galeria" class="bloque-galeria">
+      <h2>Galería de imágenes</h2>
+      <div class="grid-galeria">
+        <figure>
+          <img src="imagenes/lobby.jpg" alt="Lobby agentes valorant">
+          <figcaption>Lobby agentes Valorant</figcaption>
+        </figure>
+        <figure>
+          <img src="imagenes/mapas.jpg" alt="Mapas Valorant">
+          <figcaption>Algunos Mapas</figcaption>
+        </figure>
+      
+      </div>
+    </section>
+  </main>
+
+  <footer class="pie">
+    <p>Proyecto realizado para Programación Avanzada — Uniboyaca</p>
+  <p>Autores: Sara Forero y Catalina Valbuena </p>
+  </footer>
+
+</div>
 
 </body>
+
 </html>
