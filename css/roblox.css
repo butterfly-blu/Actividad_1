@@ -1,0 +1,238 @@
+/* ============================================
+   RESET Y BASE
+============================================ */
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+html, body {
+  height: 100%;
+}
+
+body {
+  font-family:"VT323", monospace; 
+  font-size: 20px;
+  color: #f5dabf;
+  line-height: 1.6;
+  background: #0b3d2e;
+}
+
+h1, h2, h3 { margin-bottom: 0.6em; line-height: 1.3; }
+p { margin-bottom: 1em; }
+
+/* ============================================
+   NAV SUPERIOR
+============================================ */
+nav {
+
+  position: sticky;
+  top: 0;
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  background: #e3e3d4;
+  padding: 1rem;
+  z-index: 10;
+}
+
+nav a {
+  color: #091101;
+  text-decoration: none;
+  padding: 0.5rem 1rem;
+  border-radius: 6px;
+  /* TRANSICIÓN: color de fondo y elevación al pasar el mouse */
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+nav a:hover,
+nav a:focus {
+  background-color: #e3e3d4;
+  transform: translateY(-3px);
+}
+nav a::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+  opacity: 0;
+  z-index: -1;
+  transition: opacity 0.3s ease;
+}
+
+nav a:hover::before {
+  opacity: 1;
+}
+
+/* Cada link con su imagen específica */
+nav a[href="index.html"]::before {
+  background-color: #1f6e52; 
+  border-radius:20px;
+  background-image: none; /* asegura que no tenga imagen */
+}
+
+nav a[href="roblox.html"]::before {
+  background-image: url("../html/img/R_Menu.jpg");
+}
+
+nav a[href="saraa"]::before {
+  background-image: url("../html/img/V_Menu.jpg");
+}
+
+nav a[href="sara"]::before {
+  background-image: url("../html/img/Minecraft.webp");
+}
+
+/* ============================================
+   GRID DE PÁGINA COMPLETA
+   encabezado / contenido / pie
+============================================ */
+.pagina-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: auto 1fr auto;
+  grid-template-areas:
+    "encabezado"
+    "contenido"
+    "pie";
+  min-height: calc(100vh - 60px); /* resta la altura aprox. del nav */
+}
+
+.encabezado {
+  grid-area: encabezado;
+  background: #1f6e52;
+  padding: 2rem 1.5rem;
+  width: 672;
+  height: 32;
+  text-align: center;
+font-family:"VT323", monospace;   color: black;
+}
+
+.contenido {
+  grid-area: contenido;
+  padding: 2rem 1.5rem;
+  max-width: 1000px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+.pie {
+  grid-area: pie;
+  background:  #e3e3d4;
+;
+  color: #0f3d3a;
+  text-align: center;
+  padding: 1.5rem;
+  font-size: 0.9rem;
+}
+
+/* ============================================
+   INTRODUCCIÓN — Flexbox (texto + imagen)
+============================================ */
+.bloque-flex {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 2rem;
+  margin-bottom: 3rem;
+}
+
+.bloque-flex .texto { flex: 1 1 300px; }
+
+.bloque-flex .imagen-caja {
+  flex: 1 1 300px;
+}
+
+.bloque-flex .imagen-caja img {
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+  display: block;
+}
+
+
+/* Grid de tarjetas */
+.bloque-grid { margin-bottom: 3rem; }
+
+.grid-contenido {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1.5rem;
+  margin-top: 1.5rem;
+}
+
+.card {
+  background: #fff;
+  color: #0f3d3a;
+  border-radius: 10px;
+  padding: 1.5rem;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  /* ANIMACIÓN: aparición gradual de cada tarjeta */
+  animation: aparecer 0.6s ease forwards;
+  opacity: 0;
+}
+
+/* Subtítulo suelto, separado de las cards */
+.subtitulo {
+    
+  margin-top: 2.5rem;
+  margin-bottom: 1rem;
+  font-size: 1.3rem;
+}
+
+/* Card que ocupa todo el ancho disponible */
+.card-h{
+  background: #fff;
+  color: #0f3d3a;
+  border-radius: 10px;
+  padding: 1.5rem;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  /* ANIMACIÓN: aparición gradual de cada tarjeta */
+  animation: aparecer 0.6s ease forwards;
+  opacity: 0;
+}
+
+
+.card:nth-child(2) { animation-delay: 0.15s; }
+.card:nth-child(3) { animation-delay: 0.3s; }
+
+@keyframes aparecer {
+  from { opacity: 0; transform: translateY(20px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* GALERÍA — Grid de imágenes */
+.bloque-galeria { margin-bottom: 3rem; }
+
+.grid-galeria {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1.2rem;
+  margin-top: 1.5rem;
+}
+
+.grid-galeria figure {
+  margin: 0;
+}
+
+.grid-galeria img {
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
+  border-radius: 8px;
+  display: block;
+  /* TRANSICIÓN: zoom suave al pasar el mouse sobre la imagen */
+  transition: transform 0.3s ease;
+}
+
+.grid-galeria img:hover {
+  transform: scale(1.05);
+}
+
+.grid-galeria figcaption {
+  font-size: 0.85rem;
+  color: #3da27d;
+  margin-top: 0.4rem;
+  text-align: center;
+}
