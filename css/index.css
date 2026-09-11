@@ -1,12 +1,10 @@
 h1{
-color: #f2c48d;
+color: #ffffff;
     text-align:center;
     
 }
-
 p{
-    color:  #f2c48d;
-    text-align-last:left;
+    color:  #f5dabf;
 }
 
 body{
@@ -49,7 +47,7 @@ nav a {
 
 nav a:hover,
 nav a:focus {
-  background-color: #1f6e52;
+  background-color: #144131;
   transform: translateY(-3px);
 }
 nav a::before {
@@ -71,8 +69,10 @@ nav a:hover::before {
 }
 
 /* Cada link con su imagen específica */
-
-
+nav a[href="index.html"]::before {
+  background-color: #1f6e52; 
+  border-radius:20px;
+  background-image: none;}
 
 nav a[href="roblox.html"]::before {
   background-image: url("../html/img/R_Menu.jpg");
@@ -86,7 +86,6 @@ nav a[href="sara"]::before {
   background-image: url("../html/img/V_Menu.jpg");
 }
 
-
 .nav-links{
   display: flex;
   list-style: none;
@@ -95,12 +94,12 @@ nav a[href="sara"]::before {
   gap: 25px;
 }
 
-
-
 main{
-  max-width: 900px;
+  flex-direction: column;
+  gap: 24px;
+  max-width: 1100px;
   margin: 0 auto;
-  padding: 20px;
+  padding: 40px 20px;
 }
 
 .game-card{
@@ -113,15 +112,9 @@ main{
 }
 
 .game-card h2{
-  color: #85b45d;
-  border-bottom: 2px solid rgb(75, 143, 65);
+  color: #246f55;
+  border-bottom: 2px solid rgb(36, 111, 85);
   padding-bottom: 8px;
-}
-
-.game-card img{
-  border-radius: 8px;
-  display: block;
-  margin: 15px 0;
 }
 
 footer{
