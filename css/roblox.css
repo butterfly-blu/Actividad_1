@@ -1,26 +1,33 @@
-/* ============================================
-   RESET Y BASE
-============================================ */
-* { margin: 0; padding: 0; box-sizing: border-box; }
+/* RESET Y BASE*/
 
-html, body {
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,body {
   height: 100%;
 }
 
 body {
-  font-family:"VT323", monospace; 
+  font-family: "VT323", monospace;
   font-size: 20px;
   color: #f5dabf;
   line-height: 1.6;
   background: #0b3d2e;
 }
 
-h1, h2, h3 { margin-bottom: 0.6em; line-height: 1.3; }
-p { margin-bottom: 1em; }
+h1,h2,h3 {
+  margin-bottom: 0.6em;
+  line-height: 1.3;
+}
 
-/* ============================================
-   NAV SUPERIOR
-============================================ */
+p {
+  margin-bottom: 1em;
+}
+
+/* NAV SUPERIOR */
 nav {
 
   position: sticky;
@@ -41,12 +48,14 @@ nav a {
   /* TRANSICIÓN: color de fondo y elevación al pasar el mouse */
   transition: background-color 0.3s ease, transform 0.3s ease;
 }
+/* pseudo-elemento ::before -- permite tener 
+la imagen de fondo completa y hacerla aparecer con transición suave */
 
-nav a:hover,
-nav a:focus {
+nav a:hover,nav a:focus {
   background-color: #e3e3d4;
   transform: translateY(-3px);
 }
+
 nav a::before {
   content: "";
   position: absolute;
@@ -67,27 +76,24 @@ nav a:hover::before {
 
 /* Cada link con su imagen específica */
 nav a[href="index.html"]::before {
-  background-color: #1f6e52; 
-  border-radius:20px;
-  background-image: none; /* asegura que no tenga imagen */
+  background-color: #1f6e52;
+  border-radius: 20px;
+  background-image: none;/* asegura que no tenga imagen */
 }
 
 nav a[href="roblox.html"]::before {
-  background-image: url("../html/img/R_Menu.jpg");
+  background-image: url("../imagenes/Roblox.jpg");
 }
 
-nav a[href="saraa"]::before {
-  background-image: url("../html/img/V_Menu.jpg");
+nav a[href="../Valorant.html"]::before {
+  background-image: url("../imagenes/V_Menu.jpg");
 }
 
-nav a[href="sara"]::before {
-  background-image: url("../html/img/Minecraft.webp");
+nav a[href="../Minecraft.html"]::before {
+  background-image: url("../imagenes/M_Menu.jpg");
 }
 
-/* ============================================
-   GRID DE PÁGINA COMPLETA
-   encabezado / contenido / pie
-============================================ */
+/* GRID DE PÁGINA COMPLETA encabezado / contenido / pie */
 .pagina-grid {
   display: grid;
   grid-template-columns: 1fr;
@@ -106,7 +112,8 @@ nav a[href="sara"]::before {
   width: 672;
   height: 32;
   text-align: center;
-font-family:"VT323", monospace;   color: black;
+  font-family: "VT323", monospace;
+  color: black;
 }
 
 .contenido {
@@ -119,17 +126,15 @@ font-family:"VT323", monospace;   color: black;
 
 .pie {
   grid-area: pie;
-  background:  #e3e3d4;
-;
+  background: #e3e3d4;
+  ;
   color: #0f3d3a;
   text-align: center;
   padding: 1.5rem;
   font-size: 0.9rem;
 }
 
-/* ============================================
-   INTRODUCCIÓN — Flexbox (texto + imagen)
-============================================ */
+/* INTRODUCCIÓN — Flexbox (texto + imagen) */
 .bloque-flex {
   display: flex;
   flex-wrap: wrap;
@@ -138,7 +143,9 @@ font-family:"VT323", monospace;   color: black;
   margin-bottom: 3rem;
 }
 
-.bloque-flex .texto { flex: 1 1 300px; }
+.bloque-flex .texto {
+  flex: 1 1 300px;
+}
 
 .bloque-flex .imagen-caja {
   flex: 1 1 300px;
@@ -153,7 +160,9 @@ font-family:"VT323", monospace;   color: black;
 
 
 /* Grid de tarjetas */
-.bloque-grid { margin-bottom: 3rem; }
+.bloque-grid {
+  margin-bottom: 3rem;
+}
 
 .grid-contenido {
   display: grid;
@@ -167,7 +176,7 @@ font-family:"VT323", monospace;   color: black;
   color: #0f3d3a;
   border-radius: 10px;
   padding: 1.5rem;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
   /* ANIMACIÓN: aparición gradual de cada tarjeta */
   animation: aparecer 0.6s ease forwards;
   opacity: 0;
@@ -175,35 +184,49 @@ font-family:"VT323", monospace;   color: black;
 
 /* Subtítulo suelto, separado de las cards */
 .subtitulo {
-    
+
   margin-top: 2.5rem;
   margin-bottom: 1rem;
   font-size: 1.3rem;
 }
 
 /* Card que ocupa todo el ancho disponible */
-.card-h{
+.card-h {
   background: #fff;
   color: #0f3d3a;
   border-radius: 10px;
   padding: 1.5rem;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
   /* ANIMACIÓN: aparición gradual de cada tarjeta */
   animation: aparecer 0.6s ease forwards;
   opacity: 0;
 }
 
 
-.card:nth-child(2) { animation-delay: 0.15s; }
-.card:nth-child(3) { animation-delay: 0.3s; }
+.card:nth-child(2) {
+  animation-delay: 0.15s;
+}
+
+.card:nth-child(3) {
+  animation-delay: 0.3s;
+}
 
 @keyframes aparecer {
-  from { opacity: 0; transform: translateY(20px); }
-  to   { opacity: 1; transform: translateY(0); }
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 /* GALERÍA — Grid de imágenes */
-.bloque-galeria { margin-bottom: 3rem; }
+.bloque-galeria {
+  margin-bottom: 3rem;
+}
 
 .grid-galeria {
   display: grid;

@@ -1,29 +1,27 @@
-h1{
-color: #ffffff;
-    text-align:center;
-    
+/*RESET Y BASE */
+* { margin: 0; padding: 0; box-sizing: border-box; }
+h1 {
+  color: #ffffff;
+  text-align: center;
 }
-p{
-    color:  #f5dabf;
+html, body {
+  height: 100%;
+}
+p {
+  color: #f5dabf;
 }
 
-body{
-   font-family:"VT323", monospace; 
-   font-size: 20px;
+body {
+  font-family: "VT323", monospace;
+  font-size: 20px;
   background-image: url('../html/img/videojuegos.jpg');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
   background-attachment: fixed;
 }
-.logo{
-    color: #ffffff;
 
-}
-
-/* ============================================
-   NAV SUPERIOR
-============================================ */
+/* NAV SUPERIOR */
 nav {
 
   position: sticky;
@@ -45,11 +43,13 @@ nav a {
   transition: background-color 0.3s ease, transform 0.3s ease;
 }
 
-nav a:hover,
-nav a:focus {
+nav a:hover,nav a:focus {
   background-color: #144131;
   transform: translateY(-3px);
 }
+
+/* pseudo-elemento ::before -- permite tener 
+la imagen de fondo completa y hacerla aparecer con transición suave */
 nav a::before {
   content: "";
   position: absolute;
@@ -70,23 +70,24 @@ nav a:hover::before {
 
 /* Cada link con su imagen específica */
 nav a[href="index.html"]::before {
-  background-color: #1f6e52; 
-  border-radius:20px;
-  background-image: none;}
+  background-color: #1f6e52;
+  border-radius: 20px;
+  background-image: none;
+}
 
 nav a[href="roblox.html"]::before {
   background-image: url("../html/img/R_Menu.jpg");
 }
 
-nav a[href="saraa"]::before {
-  background-image: url("../html/img/Minecraft.webp");
-}
-
-nav a[href="sara"]::before {
+nav a[href="../Valorant.html"]::before {
   background-image: url("../html/img/V_Menu.jpg");
 }
 
-.nav-links{
+nav a[href="../Minecraft.html"]::before {
+  background-image: url("../html/img/M_Menu.jpg");
+}
+
+.nav-links {
   display: flex;
   list-style: none;
   margin: 0;
@@ -94,7 +95,7 @@ nav a[href="sara"]::before {
   gap: 25px;
 }
 
-main{
+main {
   flex-direction: column;
   gap: 24px;
   max-width: 1100px;
@@ -102,22 +103,22 @@ main{
   padding: 40px 20px;
 }
 
-.game-card{
+.game-card {
   background-color: #1e1e1e;
   color: white;
   border-radius: 12px;
   padding: 25px;
   margin-bottom: 30px;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
 }
 
-.game-card h2{
+.game-card h2 {
   color: #246f55;
   border-bottom: 2px solid rgb(36, 111, 85);
   padding-bottom: 8px;
 }
 
-footer{
+footer {
   text-align: center;
   padding: 10px;
   background-color: #1f6e52a9;

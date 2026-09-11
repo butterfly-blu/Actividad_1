@@ -64,12 +64,12 @@ nav a:hover::before {
 }
 
 /* Cada link con su imagen específica */
-nav a[href="#introduccion"]::before {
+nav a[href="html/index.html"]::before {
   background-color: #80a32f; 
   background-image: none; /* asegura que no tenga imagen */
 }
 
-nav a[href="#desarrollo"]::before {
+nav a[href="html/roblox.html"]::before {
   background-image: url("../imagenes/Roblox.jpg");
 }
 
