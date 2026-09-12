@@ -96,7 +96,7 @@ nav a[href="Minecraft.html"]::before {
 .encabezado {
   grid-area: encabezado;
   background: #97c49e;
-  padding: 3rem 1.5rem;
+  padding: 2rem 1.5rem;
   text-align: center;
   color: #5a4117;
 }
