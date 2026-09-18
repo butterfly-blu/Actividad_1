@@ -45,7 +45,7 @@ nav a {
   text-decoration: none;
   padding: 0.5rem 1rem;
   border-radius: 6px;
-  /* TRANSICIÓN: color de fondo y elevación al pasar el mouse */
+  animation: flotarNav 2s ease-in-out infinite;
   transition: background-color 0.3s ease, transform 0.3s ease;
 }
 /* pseudo-elemento ::before -- permite tener 
@@ -82,22 +82,22 @@ nav a[href="index.html"]::before {
 }
 
 nav a[href="roblox.html"]::before {
-  background-image: url("../imagenes/Roblox.jpg");
+  background-image: url("../imagenes/R_Menu.jpg");
 }
 
-nav a[href="../Valorant.html"]::before {
+nav a[href="Valorant.html"]::before {
   background-image: url("../imagenes/V_Menu.jpg");
 }
 
-nav a[href="../Minecraft.html"]::before {
+nav a[href="Minecraft.html"]::before {
   background-image: url("../imagenes/M_Menu.jpg");
 }
 
-nav a[href="../gta.html"]::before {
-  background-image: url("../imagenes/M_Menu.jpg");
+nav a[href="gta.html"]::before {
+  background-image: url("../imagenes/M_gta.webp");
 }
 
-nav a[href="../HonkaiSR.html"]::before {
+nav a[href="HonkaiSR.html"]::before {
   background-image: url("../imagenes/hsr.jpg");
 }
 
@@ -159,7 +159,7 @@ nav a[href="../HonkaiSR.html"]::before {
 }
 
 .bloque-flex .imagen-caja img {
-  width: 100%;
+  width: 70%;
   height: auto;
   border-radius: 10px;
   display: block;
@@ -203,12 +203,33 @@ nav a[href="../HonkaiSR.html"]::before {
   color: #0f3d3a;
   border-radius: 10px;
   padding: 1.5rem;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  box-shadow: 2 2px 6px rgba(192, 74, 74, 0.1);
   /* ANIMACIÓN: aparición gradual de cada tarjeta */
   animation: aparecer 0.6s ease forwards;
   opacity: 0;
 }
 
+/* ============ 1. SELECTORES BÁSICOS Y COMBINADORES ============ */
+
+/* Selector de Tagname (Etiqueta) */
+article {
+  border: 1px solid transparent;
+}
+
+/* Combinador Hijo Directo ( > ): tarjetas de tipo, hijas directas de .grid-contenido (main) */
+.grid-contenido > .card {
+  border-left: 4px solid #060707;
+}
+
+/* Combinador Hermano Adyacente ( + ): el párrafo justo después de cualquier h2 */
+h2 + p {
+  font-weight: bold;
+}
+
+/* Combinador Hermano General ( ~ ): todas las tarjetas card-h después del subtítulo */
+.subtitulo ~ .card-h {
+  border-right: 4px solid #040404;
+}
 
 .card:nth-child(2) {
   animation-delay: 0.15s;
@@ -261,4 +282,74 @@ nav a[href="../HonkaiSR.html"]::before {
   color: #3da27d;
   margin-top: 0.4rem;
   text-align: center;
+}
+
+/* Transición 2: Enlaces de navegación con escalado */
+nav a:active {
+  transform: scale(0.95);
+}
+/* Transición 3 y Pseudoclase :focus para botones interactivos */
+
+.btn-roblox {
+  display: inline-block;
+  padding: 0.5rem 1rem;
+  background: #1f6e52;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 5px;
+  border: 2px solid transparent;
+  transition: opacity 0.3s ease, border-color 0.3s ease;
+}
+
+.btn-roblox:hover {
+  opacity: 0.9;
+}
+
+.btn-roblox:focus {
+  outline: none;
+}
+/* ============ 3. PSEUDOELEMENTOS ============ */
+
+/* Pseudoelemento: adorno visual en el título del encabezado */
+.encabezado h1::after {
+  content: " ⬡ ⬡ ⬡";
+  font-size: 2rem;
+  display: block;
+  margin-top: 0.3rem;
+}
+
+
+/* ============ 4. ANIMACIONES (@keyframes) ============ */
+
+/* Animación 1: Latido/Pulsación para el título del encabezado */
+@keyframes latidoLogo {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.03); }
+  100% { transform: scale(1); }
+}
+
+.encabezado h1 {
+  animation: latidoLogo 3s infinite ease-in-out;
+}
+
+
+/* Animación 2: Entrada lateral para la sección de introducción */
+@keyframes deslizarEntrada {
+  from {
+    opacity: 0;
+    transform: translateX(-50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+#introduccion {
+  animation: deslizarEntrada 0.8s ease-out forwards;
+}
+/* Animación 3: para hacer flotar suavemente el menu */
+@keyframes flotarNav {
+  0%, 100% { transform: translateY(0); }
+  50%      { transform: translateY(-4px); }
 }

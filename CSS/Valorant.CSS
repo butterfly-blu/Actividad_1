@@ -37,6 +37,7 @@ nav a {
   overflow: hidden;
   z-index: 1;
   transition: transform 0.3s ease;
+  animation: flotarNav 2s ease-in-out infinite;
 }
 
 /* pseudo-elemento ::before -- permite tener 
@@ -53,6 +54,7 @@ nav a::before {
   opacity: 0;
   z-index: -1;
   transition: opacity 0.3s ease;
+  animation: flotarNav 2s ease-in-out infinite;
 }
 
 nav a:hover::before {
@@ -60,12 +62,12 @@ nav a:hover::before {
 }
 
 /* Cada link con su imagen específica */
-nav a[href="html/index.html"]::before {
+nav a[href="index.html"]::before {
   background-color: #e6223a; 
   background-image: none; /* asegura que no tenga imagen */
 }
 
-nav a[href="html/roblox.html"]::before {
+nav a[href="roblox.html"]::before {
   background-image: url("../imagenes/Roblox.jpg");
 }
 
@@ -77,8 +79,8 @@ nav a[href="Minecraft.html"]::before {
   background-image: url("../imagenes/M_Menu.jpg");
 }
 
-nav a[href="../gta.html"]::before {
-  background-image: url("../imagenes/M_Menu.jpg");
+nav a[href="gta.html"]::before {
+  background-image: url("../imagenes/M_gta.webp");
 }
 
 nav a[href="HonkaiSR.html"]::before {
@@ -342,4 +344,9 @@ nav a:active {
 
 #introduccion {
   animation: deslizarEntrada 0.8s ease-out forwards;
+}
+/* Animación  4: para hacer flotar suavemente el menu */
+@keyframes flotarNav {
+  0%, 100% { transform: translateY(0); }
+  50%      { transform: translateY(-4px); }
 }

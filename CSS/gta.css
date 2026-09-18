@@ -1,14 +1,13 @@
-/*RESET Y BASE */
+
+RESET Y BASE
 * { margin: 0; padding: 0; box-sizing: border-box; }
-
-
 
 body {
   font-family:"VT323", monospace; 
   font-size: 20px;
-  color: #5a4117;
+  color: #000000;
   line-height: 1.6;
-  background: #cde8d4;
+  background: #dfe8f1;
 }
 
 h1, h2, h3 { margin-bottom: 0.6em; line-height: 1.3; }
@@ -17,32 +16,36 @@ h1 { font-size: 5rem; }
 h2 { font-size: 2.3rem; }
 h3 { font-size: 1.5rem; }
 
-p {  margin-bottom: 1em; }
+p {  margin-bottom: 1rem; }
 /*NAV SUPERIOR */
+
 nav {
   position: sticky;
   top: 0;
   display: flex;
   gap: 1rem;
   justify-content: center;
-  background: #6c9b76;
+  background:#000000;
   padding: 1rem;
   z-index: 10;
 }
 
 nav a {
   position: relative;
-  color: #fff;
-  text-decoration: none;
+  color: #f8f7f7;
+  text-decoration:none;
   padding: 0.5rem 1rem;
   border-radius: 6px;
   overflow: hidden;
   z-index: 1;
   transition: transform 0.3s ease;
+   animation: flotarNav 2s ease-in-out infinite;
 }
 
 /* pseudo-elemento ::before -- permite tener 
 la imagen de fondo completa y hacerla aparecer con transición suave */
+
+
 nav a::before {
   content: "";
   position: absolute;
@@ -53,7 +56,7 @@ nav a::before {
   background-size: cover;
   background-position: center;
   opacity: 0;
-  z-index: -1;
+  /* z-index: -1;se ve mas lindo sin este */
   transition: opacity 0.3s ease;
 }
 
@@ -62,12 +65,14 @@ nav a:hover::before {
 }
 
 /* Cada link con su imagen específica */
-nav a[href="html/index.html"]::before {
-  background-color: #80a32f; 
+
+nav a[href="index.html"]::before {
+  background-color:#95a6c9; /*cambiar*/
   background-image: none; /* asegura que no tenga imagen */
+
 }
 
-nav a[href="html/roblox.html"]::before {
+nav a[href="roblox.html"]::before {
   background-image: url("../imagenes/Roblox.jpg");
 }
 
@@ -79,7 +84,15 @@ nav a[href="Minecraft.html"]::before {
   background-image: url("../imagenes/M_Menu.jpg");
 }
 
+nav a[href="gta.html"]::before {
+  background-image: url("../imagenes/M_gta.webp");
+}
+nav a[href="HonkaiSR.html"]::before {
+  background-image: url("../imagenes/hsr.jpg");
+}
+
 /*GRID DE PÁGINA COMPLETA - encabezado / contenido / pie */
+
 .pagina-grid {
   display: grid;
   grid-template-columns: 1fr;
@@ -89,14 +102,15 @@ nav a[href="Minecraft.html"]::before {
     "contenido"
     "pie";
   min-height: calc(100vh - 60px); /* resta la altura aprox. del nav */
+
 }
 
 .encabezado {
   grid-area: encabezado;
-  background: #97c49e;
-  padding: 2rem 1.5rem;
+  background:#95a6c9 ;
+  padding: 0.9rem 1.5rem;
   text-align: center;
-  color: #5a4117;
+  color: #ffffff;
 }
 
 .contenido {
@@ -106,17 +120,8 @@ nav a[href="Minecraft.html"]::before {
   margin: 0 auto;
   width: 100%;
 }
-
-.pie {
-  grid-area: pie;
-  background: #97c49e;
-  color: #5a4117    ;
-  text-align: center;
-  padding: 1.5rem;
-  font-size: 0.9rem;
-}
-
 /* INTRODUCCIÓN — Flexbox (texto + imagen) */
+
 .bloque-flex {
   display: flex;
   flex-wrap: wrap;
@@ -146,6 +151,7 @@ nav a[href="Minecraft.html"]::before {
 }
 
 /* Grid de tarjetas */
+
 .bloque-grid { margin-bottom: 3rem; }
 
 .grid-contenido {
@@ -156,16 +162,20 @@ nav a[href="Minecraft.html"]::before {
 }
 
 .card {
-  background: #657e47;
+  background: #95a6c9;
+  color: #fff;
   border-radius: 10px;
   padding: 1.5rem;
   box-shadow: 0 2px 6px rgba(0,0,0,0.1);
   /* ANIMACIÓN: aparición gradual de cada tarjeta */
+
+
   animation: aparecer 0.6s ease forwards;
   opacity: 0;
 }
 
 /* Subtítulo suelto, separado de las cards */
+
 .subtitulo {
   margin-top: 2.5rem;
   margin-bottom: 1rem;
@@ -173,13 +183,16 @@ nav a[href="Minecraft.html"]::before {
 }
 
 /* Card que ocupa todo el ancho disponible */
+
 .card-h{
-  background: #657e47;
+  background: #000000;
+  color: #fff;
   border-radius: 10px;
   padding: 2rem;
   margin-bottom: 1.5rem;
   box-shadow: 0 2px 6px rgba(0,0,0,0.1);
   /* ANIMACIÓN: aparición gradual de cada tarjeta */
+  
   animation: aparecer 0.6s ease forwards;
   opacity: 0;
 }
@@ -223,8 +236,137 @@ nav a[href="Minecraft.html"]::before {
 
 .grid-galeria figcaption {
   font-size: 0.85rem;
-  color: #666;
+  color: #000000;
   margin-top: 0.4rem;
   text-align: center;
 }
 
+
+
+/* ============ 1. SELECTORES BÁSICOS Y COMBINADORES ============ */
+
+/* Selector de Tagname (Etiqueta) */
+
+article {
+  border: 1px solid transparent;
+}
+
+/* Selector de ID y Selector de Clase  */
+
+/* Combinador Hijo Directo ( > ) */
+
+.grid-contenido > .card {
+  border-left: 4px solid #6d7a92;
+}
+
+/* Combinador Hermano Adyacente ( + ) */
+
+h2 + p {
+  font-weight: bold;
+}
+
+/* Combinador Hermano General ( ~ ) */
+
+.subtitulo ~ .card-h {
+  border-right: 4px solid #b0a5a5;
+}
+
+
+/* ============ 2. TRANSICIONES Y PSEUDOCLASES ============ */
+
+/* Transición 1: Tarjetas con elevación en Hover (:hover) */
+
+.card {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* Transición 2: Enlaces de navegación con escalado */
+
+nav a {
+  transition: transform 0.3s ease, color 0.3s ease;
+}
+
+/* Pseudoclase :active para feedback al hacer clic */
+
+nav a:active {
+  transform: scale(0.95);
+}
+
+/* Transición 3 y Pseudoclase :focus para botones interactivos */
+
+.btn-gta {
+  display: inline-block;
+  padding: 0.5rem 1rem;
+  background: #95a6c9;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 5px;
+  border: 2px solid transparent;
+  transition: opacity 0.3s ease, border-color 0.3s ease;
+}
+
+.btn-gta:hover {
+  opacity: 0.9;
+}
+
+.btn-gta:focus {
+  outline: none;
+}
+
+/* Pseudoelemento 2: ::after para añadir un adorno visual al título */
+
+.encabezado h1::after {
+  content: " ★★★★★";
+  font-size: 2rem;
+  color: #ffffff;
+  display: block;
+}
+
+
+/* Animación 2: Latido/Pulsación para el título */
+
+@keyframes latidoLogo {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.03); }
+  100% { transform: scale(1); }
+}
+
+.encabezado h1 {
+  animation: latidoLogo 3s infinite ease-in-out;
+}
+
+/* Animación 3: Entrada lateral para la sección de introducción */
+
+@keyframes deslizarEntrada {
+  from {
+    opacity: 0;
+    transform: translateX(-50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+#introduccion {
+  animation: deslizarEntrada 0.8s ease-out forwards;
+}
+/* Animación 4: para hacer flotar suavemente el menu */
+@keyframes flotarNav {
+  0%, 100% { transform: translateY(0); }
+  50%      { transform: translateY(-4px); }
+}
+ 
+.pie {
+  grid-area: pie;
+  background: #000000;
+  color: #ffffff    ;
+  text-align: center;
+  padding: 1.5rem;
+  font-size: 0.9rem;
+}
