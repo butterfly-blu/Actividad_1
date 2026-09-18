@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+<head><meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <link rel="stylesheet" href="CSS/HonkaiSR.CSS"/>
+ <link rel="icon" type="image/png" href="imagenes/logohsr.jpg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=VT323&display=swap" rel="stylesheet">
+<title>Honkai: Star Rail</title>
+
+</head>
+<body>
+
+<!-- NAV SUPERIOR -->
+<nav>
+  <a href="html/index.html">Página Principal</a>
+  <a href="html/roblox.html">Roblox</a>
+  <a href="Valorant.html">Valorant</a>
+  <a href="Minecraft.html">Minecraft</a>
+  <a href="gta.html">GTA</a>
+  <a href="HonkaiSR.html">Honkai: Star Rail</a>
+</nav>
+
+<!-- GRID DE PÁGINA COMPLETA -->
+<div class="pagina-grid">
+
+  <header class="encabezado">
+    <h1>Honkai: Star Rail</h1>
+    <p>Videojuego de rol (RPG) y estrategia por turnos de fantasía espacial.</p>
+  </header>
+
+  <main class="contenido">
+
+    <!-- ---- Introducción: texto + imagen con Flexbox ---- -->
+   <section id="introduccion" class="bloque-flex">
+  <div class="texto">
+    <h2>¿Qué es?</h2>
+    <p>Es un juego RPG de estrategia por turnos, con combates donde formas un equipo de personajes que atacan según un orden determinado por su velocidad, desarrollado por HoYoverse. </p>
+    <!-- Enlace con la tercera transición y pseudoclase :focus -->
+    <a href="https://hsr.hoyoverse.com/es-es/" target="_blank" class="btn-gta">Sitio Oficial</a>  
+  </div>
+  <figure class="imagen-caja">
+    <img src="imagenes/hstjpg.jpg" alt="Descripción de la imagen 1">
+    <figcaption>Tomado de: HoYoverse (2023).</figcaption>
+  </figure>
+</section>
+
+    <!-- ---- Desarrollo: bloques de texto en Grid ---- -->
+    <section id="desarrollo" class="bloque-grid">
+      <h2>¿Cómo funciona?</h2>
+      <div class="grid-contenido">
+        <article class="card">
+          <h3>Jugabilidad por turnos</h3>
+          <p>Los combates requieren elegir ataques y habilidades en orden táctico, similar a los juegos de rol clásicos.</p>
+        </article>
+        <article class="card">
+          <h3>Historia y ambientación</h3>
+          <p>Viajas por la galaxia a bordo del Expreso Astral junto a otros personajes para resolver conflictos y
+             descubrir los misterios de los Eones y los Stellarons.</p>
+        </article>
+        <article class="card">
+          <h3>Sistema de gacha</h3>
+          <p>Como otros juegos de HoYoverse, usa un sistema de invocación (gacha) 
+            para obtener nuevos personajes y armas (llamadas "Cadenas de Luz" o Light Cones).</p>
+        </article>
+        </div>
+
+    </section>
+
+    <section id="rangos" class="bloque-flex">
+  <div class="texto">
+    <h2>Personajes con elementos y "caminos"(Paths)</h2>
+    <p>Cada personaje pertenece a un elemento (Fuego, Hielo, Físico, etc.) y a un "Path" o 
+        camino (como Destrucción, Caza, Erudición, Armonía, Nihilidad, Preservación, Abundancia), 
+        que define su rol en combate (daño, soporte, tanque, etc.).</p>
+  </div>
+
+  
+  <div class="imagenes-dobles">
+    <figure class="imagen-caja">
+      <img src="imagenes/claseshsr.jpg" alt="Clases de Honkai Star Rail">
+      <figcaption>Tomado de: HoYoverse (2023).</figcaption>
+    </figure>
+    <figure class="imagen-caja">
+      <img src="imagenes/elementoshsr.jpg" alt="Elementos de Honkai Star Rail">
+      <figcaption>Tomado de: HoYoverse (2023).</figcaption>
+    </figure>
+  </div>
+</section>
+
+    <!-- ---- Galería: imágenes con Grid ---- -->
+    <section id="galeria" class="bloque-galeria">
+      <h2>Galería de imágenes</h2>
+      <div class="grid-galeria">
+        <figure>
+          <img src="imagenes/j2hsr.jpg" alt="Lobby agentes valorant">
+          <figcaption>Menú Personajes</figcaption>
+        </figure>
+        <figure>
+          <img src="imagenes/jugabilidadhsr.jpg" alt="Mapas Valorant">
+          <figcaption>Modo pelea</figcaption>
+        </figure>
+      
+      </div>
+    </section>
+  </main>
+
+  <footer class="pie">
+    <p>Proyecto realizado para Programación Avanzada — Uniboyaca</p>
+  <p>Autores: Sara Forero y Catalina Valbuena </p>
+  </footer>
+
+</div>
+
+</body>
+
+</html>

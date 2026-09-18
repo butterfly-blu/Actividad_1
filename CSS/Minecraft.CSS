@@ -1,10 +1,6 @@
 /*RESET Y BASE */
 * { margin: 0; padding: 0; box-sizing: border-box; }
 
-html, body {
-  height: 100%;
-}
-
 body {
   font-family:"VT323", monospace; 
   font-size: 20px;
@@ -79,6 +75,14 @@ nav a[href="Valorant.html"]::before {
 
 nav a[href="Minecraft.html"]::before {
   background-image: url("../imagenes/M_Menu.jpg");
+}
+
+nav a[href="../gta.html"]::before {
+  background-image: url("../imagenes/M_Menu.jpg");
+}
+
+nav a[href="HonkaiSR.html"]::before {
+  background-image: url("../imagenes/hsr.jpg");
 }
 
 /*GRID DE PÁGINA COMPLETA - encabezado / contenido / pie */
@@ -230,3 +234,115 @@ nav a[href="Minecraft.html"]::before {
   text-align: center;
 }
 
+/* ============ 1. SELECTORES BÁSICOS Y COMBINADORES ============ */
+
+/* Selector de Tagname (Etiqueta) */
+article {
+  border: 1px solid transparent;
+}
+
+/* Selector de ID y Selector de Clase (#introduccion, .card) */
+
+/* Combinador Hijo Directo ( > ) */
+.grid-contenido > .card {
+  border-left: 4px solid #5a4117;
+}
+
+/* Combinador Hermano Adyacente ( + ) */
+h2 + p {
+  font-weight: bold;
+}
+
+/* Combinador Hermano General ( ~ ) */
+.subtitulo ~ .card-h {
+  border-right: 4px solid #4c3712;
+}
+
+
+/* ============ 2. TRANSICIONES Y PSEUDOCLASES ============ */
+
+/* Transición 1: Tarjetas con elevación en Hover (:hover) */
+.card {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* Transición 2: Enlaces de navegación con escalado */
+nav a {
+  transition: transform 0.3s ease, color 0.3s ease;
+}
+
+/* Pseudoclase :active para feedback al hacer clic */
+nav a:active {
+  transform: scale(0.95);
+}
+
+/* Transición 3 y Pseudoclase :focus para botones interactivos */
+.btn-gta {
+  display: inline-block;
+  padding: 0.5rem 1rem;
+  background: #5a4117;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 5px;
+  border: 2px solid transparent;
+  transition: opacity 0.3s ease, border-color 0.3s ease;
+}
+
+.btn-gta:hover {
+  opacity: 0.9;
+}
+
+.btn-gta:focus {
+  outline: none;
+  border-color: #fff;
+}
+
+
+/* ============ 3. PSEUDOELEMENTOS ============ */
+
+/* Pseudoelemento 1: ::before (Ya utilizado en tu nav a::before) */
+
+/* Pseudoelemento 2: ::after para añadir un adorno visual al título */
+.encabezado h1::after {
+  content: " ⛏ ▪ ▪ ▪ ⛏";
+  font-size: 2rem;
+  color: #5a4117;
+  display: block;
+}
+
+
+/* ============ 4. ANIMACIONES (@keyframes) ============ */
+
+/* Animación 1: 'aparecer' (Ya existente en tu CSS para las cards) */
+
+/* Animación 2: Latido/Pulsación para el título */
+@keyframes latidoLogo {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.03); }
+  100% { transform: scale(1); }
+}
+
+.encabezado h1 {
+  animation: latidoLogo 3s infinite ease-in-out;
+}
+
+/* Animación 3: Entrada lateral para la sección de introducción */
+@keyframes deslizarEntrada {
+  from {
+    opacity: 0;
+    transform: translateX(-50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+#introduccion {
+  animation: deslizarEntrada 0.8s ease-out forwards;
+}

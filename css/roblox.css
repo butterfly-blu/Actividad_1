@@ -93,6 +93,15 @@ nav a[href="../Minecraft.html"]::before {
   background-image: url("../imagenes/M_Menu.jpg");
 }
 
+nav a[href="../gta.html"]::before {
+  background-image: url("../imagenes/M_Menu.jpg");
+}
+
+nav a[href="../HonkaiSR.html"]::before {
+  background-image: url("../imagenes/hsr.jpg");
+}
+
+
 /* GRID DE PÁGINA COMPLETA encabezado / contenido / pie */
 .pagina-grid {
   display: grid;
